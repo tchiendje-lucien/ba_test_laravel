@@ -1,0 +1,40 @@
+body
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.sidebar
+{
+    height: 100vh !important;
+}
+div#contenu 
+{
+    overflow: auto !important;
+}
+ .menu-gauche a.nav-link
+{
+    color: aliceblue !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid blanchedalmond;
+    
+}
+.menu-droite a:hover
+{
+    text-decoration: none !important;
+}
+.image
+{
+    height: 30.5rem;
+    width: 100% !important;
+}
+.menu-gauche li:hover
+{
+    border: none;
+    font-weight: bolder;
+    border: 1px solid blanchedalmond;
+}
+.nav-link[data-toggle].collapsed:after 
+{
+    content: "▾";
+}
