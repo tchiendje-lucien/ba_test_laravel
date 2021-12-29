@@ -95,7 +95,7 @@ class RegisterController extends Controller
         $req->validate([
             'full_name' => 'required',
             're_password' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
