@@ -135,10 +135,10 @@ class publicationController extends Controller
                     ]
                 );
                 if ($insert_pub) {
-                    $id_pub = DB::select("SELECT currval(pg_get_serial_sequence('publications','ID_PUBLICATION'));");
+                    $id_pub = DB::select("SELECT currval(pg_get_serial_sequence('publications','ID_PUBLICATION'));")[0];
                     $insert_image = DB::table('images_pub')->insert(
                         [
-                            "ID_PUBLICATION" => 1,
+                            "ID_PUBLICATION" => $id_pub->currval,
                             "LIBELLE_IMAGE" => $photo,
                         ]
                     );
