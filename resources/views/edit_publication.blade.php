@@ -111,7 +111,7 @@
                                                         <div class="upload-column">
                                                             <input type="hidden" name="old_image_prod"
                                                                 value="{{ $info_prod->LIBELLE_IMAGE }}" />
-                                                            <input type="file"
+                                                            <input type=""
                                                                 name="image_prod" class="screenshot" id="screenshot"
                                                                 style="display:none">
                                                             <input type="hidden" name="csrf-token"
