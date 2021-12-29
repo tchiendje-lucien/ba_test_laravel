@@ -127,10 +127,10 @@ class publicationController extends Controller
                 $insert_pub = DB::table('publications')->insert(
                     [
                         "ID_USER" => session::get('id_user'),
-                        "ID_PRODUIT" => $id_prod,
+                        "ID_PRODUIT" => 1,
                         "ETAT_PUB" => 1,
                         "DATE_PUB" => Carbon::now(),
-                        "DATE_MODIF_PUB" => Carbon::now(),
+                        "DATE_MODIF_PUB" => Carbon::now()
                     ]
                 );
                 if ($insert_pub) {
