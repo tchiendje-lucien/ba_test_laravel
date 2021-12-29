@@ -111,14 +111,14 @@
                                                         <div class="upload-column">
                                                             <input type="hidden" name="old_image_prod"
                                                                 value="{{ $info_prod->LIBELLE_IMAGE }}" />
-                                                            <input onchange="doAfterSelectImage(this)" type="file"
+                                                            <input type="file"
                                                                 name="image_prod" class="screenshot" id="screenshot"
                                                                 style="display:none">
                                                             <input type="hidden" name="csrf-token"
                                                                 value="{{ csrf_token() }}" />
                                                             <label for="screenshot" class="img-uploaders">
                                                                 <img src="{{ URL::asset('img_product/' . $info_prod->LIBELLE_IMAGE) }}"
-                                                                    width="50%" id="post_user_image_" />
+                                                                    width="50%" id="post_user_image_" readonly/>
                                                             </label>
                                                             @error('image_prod')
                                                                 <span class="" role="alert"
