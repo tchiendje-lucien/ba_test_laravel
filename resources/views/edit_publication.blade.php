@@ -64,7 +64,7 @@
                                                     <div class="p-0 col-md-12 border-bottom">
                                                         <input type="texte" class="p-0 border-0 form-control"
                                                             name="nom_prod" value="{{ $info_prod->NOM_PROD }}"
-                                                            required>
+                                                            required readonly>
                                                         @error('nom_prod')
                                                             <span class="" role="alert" style="color: red">
                                                                 <strong>{{ $message }}</strong>
@@ -79,7 +79,7 @@
                                                     <div class="p-0 col-md-12 border-bottom">
                                                         <input type="number" class="p-0 border-0 form-control"
                                                             name="prix_prod" value="{{ $info_prod->PRIX_PROD }}"
-                                                            required>
+                                                            required readonly>
                                                         @error('prix_prod')
                                                             <span class="" role="alert" style="color: red">
                                                                 <strong>{{ $message }}</strong>
@@ -95,7 +95,7 @@
                                                     <textarea class="form-control" id="exampleFormControlTextarea1"
                                                         rows="3" id="desc_prod" name="desc_prod"
                                                         value="{{ $info_prod->DESC_PRODUIT }}"
-                                                        required>{{ $info_prod->DESC_PRODUIT }}</textarea>
+                                                        required readonly>{{ $info_prod->DESC_PRODUIT }}</textarea>
                                                     @error('desc_prod')
                                                         <span class="" role="alert" style="color: red">
                                                             <strong>{{ $message }}</strong>
@@ -127,14 +127,6 @@
                                                                 </span>
                                                             @enderror
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-2 form-group">
-                                                    <div class="col-sm-12">
-                                                        <input type="submit" class="btn btn-primary" value="Modifier"
-                                                            style="margin-bottom: -10rem">
                                                     </div>
                                                 </div>
                                             </div>
