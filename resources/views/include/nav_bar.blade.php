@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\DB;
 use function Composer\Autoload\includeFile;
 use Illuminate\Support\Facades\session;
 
-$infos_user = DB::select('select FULL_NAME, PHOTO_USER from users where ID_USER =?',
+$infos_user = DB::select('select full_name, PHOTO_USER from users where ID_USER =?',
 [session::get('id_user')]);
 foreach ($infos_user as $infos_user);
 ?>
