@@ -142,6 +142,27 @@
                                     </form>
                                 @endforeach
                             @endif
+                            <div class="col-md-6">
+                                @if ($info_prod->ETAT_PUB == 0)
+                                    <div class="mb-2 form-group">
+                                        <a href="/active-publication/{{ $info_prod->ID_PUBLICATION }}">
+                                            <div class="col-sm-12">
+                                                <input type="button" class="btn btn-success" value="Publier"
+                                                    style="margin-bottom: -10rem">
+                                            </div>
+                                        </a>
+                                    </div>
+                                @else
+                                    <div class="mb-2 form-group">
+                                        <a href="/delete-publication/{{ $info_prod->ID_PUBLICATION }}">
+                                            <div class="col-sm-12">
+                                                <input type="button" class="btn btn-danger" value="Supprimer"
+                                                    style="margin-bottom: -10rem">
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
                     </div>
                     <!-- Row -->

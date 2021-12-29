@@ -24,8 +24,8 @@ class publicationController extends Controller
         ->get([
             "LIBELLE_IMAGE" => "images_pub.LIBELLE_IMAGE",
             "ID_PUBLICATION " => "publications.ID_PUBLICATION",
-            "ID_PRODUIT " => "produits.ID_PRODUIT",
-            "NOM_PROD	" => "produits.NOM_PROD",
+            "ID_PRODUIT" => "produits.ID_PRODUIT",
+            "NOM_PROD" => "produits.NOM_PROD",
             "PRIX_PROD" => "produits.PRIX_PROD",
             "DESC_PRODUIT" => "produits.DESC_PRODUIT",
             "ETAT_STOCK" => "produits.ETAT_STOCK",
@@ -70,6 +70,41 @@ class publicationController extends Controller
             // dd($info_prod);
             return view(
                 'edit_publication',
+                [
+                    'info_prod' => $info_prod
+                ]
+            );
+        } else {
+            return view(
+                'edit_publication',
+                [
+                    'error' => "Une erreur c'est produite lors du chargement de la page!!! veillez reesayer"
+                ]
+            );
+        }
+    }
+
+    public function create_edit_pub($id_pub)
+    {
+        $info_prod = DB::table('publications')
+            ->where('publications.ID_PUBLICATION', $id_pub)
+            ->join('users', 'users.ID_USER', '=', 'publications.ID_USER')
+            ->join('produits', 'produits.ID_PRODUIT', '=', 'publications.ID_PRODUIT')
+            ->join('images_pub', 'images_pub.ID_PUBLICATION', '=', 'publications.ID_PUBLICATION')
+            ->get([
+                "LIBELLE_IMAGE" => "images_pub.LIBELLE_IMAGE",
+                "ID_PUBLICATION " => "publications.ID_PUBLICATION",
+                "ID_PRODUIT " => "produits.ID_PRODUIT",
+                "NOM_PROD	" => "produits.NOM_PROD",
+                "PRIX_PROD" => "produits.PRIX_PROD",
+                "DESC_PRODUIT" => "produits.DESC_PRODUIT",
+                "ETAT_STOCK" => "produits.ETAT_STOCK",
+                "ETAT_PUB" => "publications.ETAT_PUB",
+            ]);
+        if ($info_prod) {
+            // dd($info_prod);
+            return view(
+                'update_publication',
                 [
                     'info_prod' => $info_prod
                 ]
@@ -207,7 +242,7 @@ class publicationController extends Controller
                 ->join('produits', 'produits.ID_PRODUIT', '=', 'publications.ID_PRODUIT')
                 ->join('images_pub', 'images_pub.ID_PUBLICATION', '=', 'publications.ID_PUBLICATION')
                 ->update([
-                    "produits.NOM_PROD" => $nom_prod,
+                    //"produits.NOM_PROD" => $nom_prod,
                     "produits.PRIX_PROD" => $prix_prod,
                     "produits.DESC_PRODUIT" => $desc_prod,
                     "produits.ETAT_STOCK" => 1,

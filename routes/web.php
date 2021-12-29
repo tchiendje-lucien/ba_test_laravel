@@ -30,6 +30,7 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/create-publication', 'App\Http\Controllers\publicationController@create_publication')->middleware('login');
 Route::get('/my-publication', 'App\Http\Controllers\publicationController@create_my_pub')->middleware('login');
 Route::get('/edit-publication/{id}', 'App\Http\Controllers\publicationController@edit_pub')->name('edit-publication')->middleware('login');
+Route::get('/update-publication/{id}', 'App\Http\Controllers\publicationController@create_edit_pub')->name('update-publication')->middleware('login');
 Route::post('/store_publication', 'App\Http\Controllers\publicationController@store_publication');
 Route::post('update_publication/{ig}', 'App\Http\Controllers\publicationController@update_publication')->name('update_publication')->middleware('login');
 Route::get('delete-publication/{id}', 'App\Http\Controllers\publicationController@delete_publication')->name('delete-publication')->middleware('login');

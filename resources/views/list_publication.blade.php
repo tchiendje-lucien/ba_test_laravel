@@ -42,7 +42,7 @@
                             @foreach ($info_prod as $info_prod)
                                 <div class="mb-4 col-lg-4 col-md-6">
                                     <div class="card h-100">
-                                        <a href="/edit-publication/{{ $info_prod->ID_PUBLICATION }}">
+                                        <a href="/update-publication/{{ $info_prod->ID_PUBLICATION }}">
                                             <img class="card-img-top"
                                                 src="{{ URL::asset('img_product/' . $info_prod->LIBELLE_IMAGE) }}"
                                                 height="150rem" alt="" /></a>
