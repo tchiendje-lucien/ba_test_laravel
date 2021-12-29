@@ -130,6 +130,7 @@ class publicationController extends Controller
                         "ID_PRODUIT" => $id_prod,
                         "ETAT_PUB" => 1,
                         "DATE_PUB" => Carbon::now(),
+                        "DATE_MODIF_PUB" => Carbon::now(),
                     ]
                 );
                 if ($insert_pub) {
