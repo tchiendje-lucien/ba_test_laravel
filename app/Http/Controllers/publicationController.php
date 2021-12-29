@@ -123,7 +123,7 @@ class publicationController extends Controller
                 ]
             );
             if ($insert_prod) {
-                $id_prod = DB::select('select LAST_INSERT_ID() as id_prod from produits;')[0];;
+                $id_prod = DB::select("SELECT currval(pg_get_serial_sequence('produits','ID_PRODUIT'));")[0];
                 $insert_pub = DB::table('publications')->insert(
                     [
                         "ID_USER" => session::get('id_user'),
