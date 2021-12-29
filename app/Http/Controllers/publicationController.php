@@ -270,7 +270,7 @@ class publicationController extends Controller
                 "publications.DATE_MODIF_PUB" => Carbon::now(),
             ]);
         if ($update_pub) {
-            return redirect("/");
+            return back()->with('success', "La publication a été supprimer de la file d'actualité avec success !!!");
         } else {
             return back()->with('error', "Une erreur c'est produite lors de la suppression de la publication!!! veillez reesayer");
         }
@@ -288,7 +288,7 @@ class publicationController extends Controller
                 "publications.DATE_MODIF_PUB" => Carbon::now(),
             ]);
         if ($update_pub) {
-            return redirect("/");
+            return back()->with('success', "La publication a été activer et publier avec success !!!");
         } else {
             return back()->with('error', "Une erreur c'est produite lors de la suppression de la publication!!! veillez reesayer");
         }
