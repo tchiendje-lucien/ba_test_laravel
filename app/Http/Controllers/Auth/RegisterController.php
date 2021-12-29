@@ -94,9 +94,9 @@ class RegisterController extends Controller
 
         $req->validate([
             'full_name' => 'required',
-            're_password' => 'required',
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => 'min:6|required_with:re_password|same:re_password',
+            're_password' => 'required|string|min:6',
         ]);
 
         if (!preg_match($EMAIL_REGEX, $email)) {
@@ -104,9 +104,6 @@ class RegisterController extends Controller
         }
         if (!preg_match($PASSWORD_REGEX, $password)) {
             return back()->with('error', 'mot de passe invalide (doit être de 4 à 20 carractere et inclure au moins 1 chiffre et un symbole');
-        }
-        if ($password != $re_password) {
-            return back()->with('error', 'Les adresse sont diffrentes');
         }
         $select_user_name = DB::table('users')
             ->where('FULL_NAME', $full_name)
