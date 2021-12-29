@@ -130,14 +130,13 @@ class publicationController extends Controller
                         "ID_PRODUIT" => $id_prod,
                         "ETAT_PUB" => 1,
                         "DATE_PUB" => Carbon::now(),
-                        "DATE_MODIF_PUB" => Carbon::now(),
                     ]
                 );
                 if ($insert_pub) {
-                    $id_pub = DB::select('select LAST_INSERT_ID() as id_pub from publications;')[0];;
+                    $id_pub = DB::select("SELECT currval(pg_get_serial_sequence('publications','ID_PUBLICATION'));");
                     $insert_image = DB::table('images_pub')->insert(
                         [
-                            "ID_PUBLICATION" => $id_pub->id_pub,
+                            "ID_PUBLICATION" => $id_pub,
                             "LIBELLE_IMAGE" => $photo,
                         ]
                     );
