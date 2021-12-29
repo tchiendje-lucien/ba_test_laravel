@@ -124,10 +124,11 @@ class publicationController extends Controller
             );
             if ($insert_prod) {
                 $id_prod = DB::select("SELECT currval(pg_get_serial_sequence('produits','ID_PRODUIT'));");
+                echo $id_prod;
                 $insert_pub = DB::table('publications')->insert(
                     [
                         "ID_USER" => session::get('id_user'),
-                        "ID_PRODUIT" => 1,
+                        "ID_PRODUIT" => $id_prod[0],
                         "ETAT_PUB" => 1,
                         "DATE_PUB" => Carbon::now(),
                         "DATE_MODIF_PUB" => Carbon::now()
