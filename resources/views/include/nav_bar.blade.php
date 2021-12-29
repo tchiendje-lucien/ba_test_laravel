@@ -1,11 +1,11 @@
 <?php
-use Illuminate\Support\Facades\DB;
+/*use Illuminate\Support\Facades\DB;
 use function Composer\Autoload\includeFile;
 use Illuminate\Support\Facades\session;
 
 $infos_user = DB::select('select full_name, PHOTO_USER from users where ID_USER =?',
 [session::get('id_user')]);
-foreach ($infos_user as $infos_user);
+foreach ($infos_user as $infos_user);*/
 ?>
 
 
@@ -180,25 +180,13 @@ foreach ($infos_user as $infos_user);
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 text-gray-600 d-none d-lg-inline small">{{ $infos_user->FULL_NAME }}</span>
+                <span class="mr-2 text-gray-600 d-none d-lg-inline small">Full name</span>
                 <img class="img-profile rounded-circle"
-                ssrc="{{ URL::asset('img_user/' . $infos_user->PHOTO_USER) }}">
+                src="{{ URL::asset('img/alan-walker-460x460.jpg') }}">
             </a>
             <!-- Dropdown - User Information -->
             <div class="shadow dropdown-menu dropdown-menu-right animated--grow-in"
                 aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                    <i class="mr-2 text-gray-400 fas fa-user fa-sm fa-fw"></i>
-                    Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="mr-2 text-gray-400 fas fa-cogs fa-sm fa-fw"></i>
-                    Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="mr-2 text-gray-400 fas fa-list fa-sm fa-fw"></i>
-                    Activity Log
-                </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="mr-2 text-gray-400 fas fa-sign-out-alt fa-sm fa-fw"></i>
