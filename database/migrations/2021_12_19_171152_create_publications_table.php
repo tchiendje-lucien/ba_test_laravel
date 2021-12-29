@@ -19,7 +19,7 @@ class CreatePublicationsTable extends Migration
             $table->integer('ID_PRODUIT')->index('I_FK_PUBLICATIONS_PRODUITS');
             $table->boolean('ETAT_PUB');
             $table->dateTime('DATE_PUB');
-            $table->dateTime('DATE_MODIF_PUB', 128)->nullable();
+            $table->dateTime('DATE_MODIF_PUB')->nullable();
         });
     }
 
